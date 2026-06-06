@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1B3A6B;
+  --color-accent: #C9A96E;
+  --color-surface: #F8F9FC;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #6B6B6B;
+  --color-border: #E2E8F0;
+
+  --font-logo: "Great Vibes", cursive;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+:root {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.logo-font {
+  font-family: var(--font-logo);
+}
+
+@layer base {
+  body {
+    @apply antialiased text-text-primary bg-white;
+  }
+}

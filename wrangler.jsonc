@@ -1,0 +1,14 @@
+{
+  "name": "melina",
+  "pages_build_output_dir": "dist",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "melina-db",
+      "database_id": "a29d12ad-24fe-4e9e-9b46-9aa13357a55c"
+    }
+  ],
+  "vars": {
+    "ADMIN_PASSWORD": "Melina2026"
+  }
+}
