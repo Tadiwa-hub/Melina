@@ -6,9 +6,8 @@ type Bindings = {
   ADMIN_PASSWORD: string
 }
 
+// Ensure the basePath matches the folder structure (/functions/api)
 const app = new Hono<{ Bindings: Bindings }>().basePath('/api')
-
-// --- Middleware ---
 
 // --- Routes ---
 
@@ -37,7 +36,7 @@ app.post('/bookings', async (c) => {
   const id = crypto.randomUUID()
   
   await c.env.DB.prepare(
-    'INSERT INTO bookings (id, property_id, customer_name, customer_phone, check_in, check_out, guests, stay_type, special_requests) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    'INSERT INTO bookings (id, property_id, customer_name, customer_phone, check_in, check_out, guests, special_requests) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
   ).bind(
     id, 
     body.property_id, 
@@ -46,7 +45,6 @@ app.post('/bookings', async (c) => {
     body.check_in, 
     body.check_out, 
     body.guests, 
-    body.stay_type, 
     body.special_requests
   ).run()
 
